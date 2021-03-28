@@ -1,0 +1,21 @@
+import glob, os, shutil, string
+rs = ['%s://' % d for d in string.ascii_uppercase if os.path.exists('%s://' % d)]
+print(rs);
+print(len(rs));
+print('10%')
+i = 0
+ff = 'Product Key'
+print('20%')
+directory = "rss"
+file_name = "test.txt"
+print('30%')
+while i != len(rs):
+  os.chdir(rs[i])
+  for file in glob.glob("**/*.txt", recursive = True):
+  	if ff in file:
+  		print(file)
+  		_result_path_ = os.path.join(rs[i], file)
+  		print(_result_path_)
+  		print('scan done')
+  i += 1
+print('stop execute')
