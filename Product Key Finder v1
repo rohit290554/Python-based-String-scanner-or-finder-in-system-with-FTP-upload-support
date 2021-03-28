@@ -1,0 +1,7 @@
+#v1
+#import glob, os, string
+#rs = ['%s://' % d for d in string.ascii_uppercase if os.path.exists('%s://' % d)]
+#print(rs);
+#os.chdir(rs[0])
+#for file in glob.glob("**/*.PDF", recursive = True):
+#print(file)
