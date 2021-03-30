@@ -1,4 +1,5 @@
 # Product Key Finder by Rohit Saxena (rohitsaxena722@gmail.com)
+#The following code is written by Rohit Saxena. STUDY PURPOSE ONLY. Any unauthorized use or modification is prohibited.
 Language used: python
 My python learning journey. I work on code and save here 
 this code is able to find any file named 'Product Key' and has file format as TXT 
