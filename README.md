@@ -5,9 +5,10 @@ I (ROHIT SAXENA) created this code for EDUCATION PURPOSE ONLY. Any illegal or in
 #The following code is written by Rohit Saxena. STUDY PURPOSE ONLY. Any unauthorized use or modification is prohibited.
 Language used: python
 My python learning journey. I work on code and save here 
-this code is able to find any file named 'Product Key' and has file format as TXT 
-also copy the data (FORMAT: file data \t file path) and save into another file (PATH : SECOND LOCAL DRIVE / rrs / rrs.txt)
-Also able to change/modify search type by editing code variable 'ff'
+this code is able to find any string in local system. 
+Supported file formats : DOCX, XLSX, TXT
+also copy the data (FORMAT: file data \t file path) and save into another file (PATH : SECOND/FIRST LOCAL DRIVE / rrs / rrs.txt)
+Also able to change/modify search type by editing code variable 'ff' (CURRENT SET TO MANUAL INPUT)
 Also able to change/modify search file type by editing LINE: 26 | for file in glob.glob("**/*.txt", recursive = True):
 Also able to send previously created file to FTP server
 
